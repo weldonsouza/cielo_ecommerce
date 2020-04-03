@@ -1,7 +1,5 @@
-import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
-import 'package:cielo_ecommerce/cieloecommerce.dart';
+import 'package:cielo_ecommerce/cielo_ecommerce.dart';
 
 void main() => runApp(MyApp());
 

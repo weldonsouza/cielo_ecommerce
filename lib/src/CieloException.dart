@@ -1,4 +1,4 @@
-import '../cieloecommerce.dart';
+import '../cielo_ecommerce.dart';
 
 class CieloException implements Exception {
   final List<CieloError> errors;

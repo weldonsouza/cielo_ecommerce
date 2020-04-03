@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import '../cieloecommerce.dart';
+import '../cielo_ecommerce.dart';
 
 class CieloEcommerce {
   final Environment environment;

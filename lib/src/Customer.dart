@@ -1,5 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
-import '../cieloecommerce.dart';
+import '../cielo_ecommerce.dart';
 
 part 'Customer.g.dart';
 

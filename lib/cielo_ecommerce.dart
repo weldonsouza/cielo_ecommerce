@@ -1,10 +1,10 @@
-library cieloecommerce;
+library cielo_ecommerce;
 
 export 'src/Address.dart';
 export 'src/BillingAddress.dart';
 export 'src/Browser.dart';
 export 'src/Cart.dart';
-export 'src/cielo_ecommerce.dart';
+export 'src/cieloecommerce.dart';
 export 'src/CieloError.dart';
 export 'src/CieloException.dart';
 export 'src/CreditCard.dart';
