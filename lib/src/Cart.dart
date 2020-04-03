@@ -9,10 +9,7 @@ class Cart {
   bool returnsAccepted;
   List<Items> items;
 
-  Cart({this.isGift,
-         this.returnsAccepted,
-         this.items
-  });
+  Cart({this.isGift, this.returnsAccepted, this.items});
 
   factory Cart.fromJson(Map<String, dynamic> json) => _$CartFromJson(json);
 

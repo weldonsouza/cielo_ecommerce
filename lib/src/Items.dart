@@ -25,24 +25,24 @@ class Items {
 
   Items(
       {this.giftCategory,
-        this.hostHedge,
-        this.nonSensicalHedge,
-        this.obscenitiesHedge,
-        this.phoneHedge,
-        this.name,
-        this.quantity,
-        this.sku,
-        this.unitPrice,
-        this.risk,
-        this.timeHedge,
-        this.type,
-        this.velocityHedge,
-        this.originalPrice,
-        this.weight,
-        this.cartType,
-        this.passenger});
+      this.hostHedge,
+      this.nonSensicalHedge,
+      this.obscenitiesHedge,
+      this.phoneHedge,
+      this.name,
+      this.quantity,
+      this.sku,
+      this.unitPrice,
+      this.risk,
+      this.timeHedge,
+      this.type,
+      this.velocityHedge,
+      this.originalPrice,
+      this.weight,
+      this.cartType,
+      this.passenger});
 
-  factory Items.fromJson(Map<String, dynamic> json) =>
-      _$ItemsFromJson(json);
+  factory Items.fromJson(Map<String, dynamic> json) => _$ItemsFromJson(json);
+
   Map<String, dynamic> toJson() => _$ItemsToJson(this);
 }

@@ -32,41 +32,43 @@ class Payment {
   List<Link> links;
   String capturedDate;
 
-  Payment(
-      {this.serviceTaxAmount,
-        this.installments,
-        this.interest,
-        this.capture,
-        this.authenticate,
-        this.recurrent,
-        this.creditCard,
-        this.tid,
-        this.proofOfSale,
-        this.authorizationCode,
-        this.softDescriptor,
-        this.provider,
-        this.fraudAnalysis,
-        this.isQrCode,
-        this.amount,
-        this.receivedDate,
-        this.status,
-        this.isSplitted,
-        this.returnMessage,
-        this.returnCode,
-        this.paymentId,
-        this.type,
-        this.currency,
-        this.country,
-        this.links,
-        this.capturedDate,
-      });
+  Payment({
+    this.serviceTaxAmount,
+    this.installments,
+    this.interest,
+    this.capture,
+    this.authenticate,
+    this.recurrent,
+    this.creditCard,
+    this.tid,
+    this.proofOfSale,
+    this.authorizationCode,
+    this.softDescriptor,
+    this.provider,
+    this.fraudAnalysis,
+    this.isQrCode,
+    this.amount,
+    this.receivedDate,
+    this.status,
+    this.isSplitted,
+    this.returnMessage,
+    this.returnCode,
+    this.paymentId,
+    this.type,
+    this.currency,
+    this.country,
+    this.links,
+    this.capturedDate,
+  });
 
   factory Payment.fromJson(Map<String, dynamic> json) =>
       _$PaymentFromJson(json);
+
   Map<String, dynamic> toJson() => _$PaymentToJson(this);
 }
 
 class TypePayment {
   static String get creditCard => 'CreditCard';
+
   static String get boleto => 'Boleto';
 }

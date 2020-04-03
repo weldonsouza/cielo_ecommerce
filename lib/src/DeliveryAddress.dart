@@ -15,15 +15,16 @@ class DeliveryAddress {
 
   DeliveryAddress(
       {this.street,
-        this.number,
-        this.complement,
-        this.zipCode,
-        this.city,
-        this.state,
-        this.country,
-        this.district});
+      this.number,
+      this.complement,
+      this.zipCode,
+      this.city,
+      this.state,
+      this.country,
+      this.district});
 
   factory DeliveryAddress.fromJson(Map<String, dynamic> json) =>
       _$DeliveryAddressFromJson(json);
+
   Map<String, dynamic> toJson() => _$DeliveryAddressToJson(this);
 }

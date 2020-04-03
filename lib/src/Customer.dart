@@ -18,17 +18,18 @@ class Customer {
 
   Customer(
       {this.name,
-        this.identity,
-        this.identityType,
-        this.email,
-        this.birthdate,
-        this.address,
-        this.deliveryAddress,
-        this.billingAddress,
-        this.phone,
-        this.mobile});
+      this.identity,
+      this.identityType,
+      this.email,
+      this.birthdate,
+      this.address,
+      this.deliveryAddress,
+      this.billingAddress,
+      this.phone,
+      this.mobile});
 
   factory Customer.fromJson(Map<String, dynamic> json) =>
       _$CustomerFromJson(json);
+
   Map<String, dynamic> toJson() => _$CustomerToJson(this);
 }

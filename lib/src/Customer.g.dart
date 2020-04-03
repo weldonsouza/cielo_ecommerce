@@ -18,10 +18,12 @@ Customer _$CustomerFromJson(Map<String, dynamic> json) {
         : Address.fromJson(json['Address'] as Map<String, dynamic>),
     deliveryAddress: json['DeliveryAddress'] == null
         ? null
-        : DeliveryAddress.fromJson(json['DeliveryAddress'] as Map<String, dynamic>),
+        : DeliveryAddress.fromJson(
+            json['DeliveryAddress'] as Map<String, dynamic>),
     billingAddress: json['BillingAddress'] == null
         ? null
-        : BillingAddress.fromJson(json['BillingAddress'] as Map<String, dynamic>),
+        : BillingAddress.fromJson(
+            json['BillingAddress'] as Map<String, dynamic>),
     phone: json['Phone'] as String,
     mobile: json['Mobile'] as String,
   );

@@ -27,26 +27,27 @@ class FraudAnalysis {
 
   FraudAnalysis(
       {this.id,
-        this.status,
-        this.statusDescription,
-        this.sequence,
-        this.sequenceCriteria,
-        this.totalOrderAmount,
-        this.transactionAmount,
-        this.fingerPrintId,
-        this.merchantDefinedFields,
-        this.cart,
-        this.travel,
-        this.browser,
-        this.shipping,
-        this.captureOnLowRisk,
-        this.voidOnHighRisk,
-        this.provider,
-        this.isRetryTransaction,
-        this.fraudAnalysisReasonCode,
-        this.replyData
-      });
+      this.status,
+      this.statusDescription,
+      this.sequence,
+      this.sequenceCriteria,
+      this.totalOrderAmount,
+      this.transactionAmount,
+      this.fingerPrintId,
+      this.merchantDefinedFields,
+      this.cart,
+      this.travel,
+      this.browser,
+      this.shipping,
+      this.captureOnLowRisk,
+      this.voidOnHighRisk,
+      this.provider,
+      this.isRetryTransaction,
+      this.fraudAnalysisReasonCode,
+      this.replyData});
 
-  factory FraudAnalysis.fromJson(Map<String, dynamic> json) => _$FraudAnalysisFromJson(json);
+  factory FraudAnalysis.fromJson(Map<String, dynamic> json) =>
+      _$FraudAnalysisFromJson(json);
+
   Map<String, dynamic> toJson() => _$FraudAnalysisToJson(this);
 }

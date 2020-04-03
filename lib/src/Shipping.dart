@@ -12,5 +12,6 @@ class Shipping {
 
   factory Shipping.fromJson(Map<String, dynamic> json) =>
       _$ShippingFromJson(json);
+
   Map<String, dynamic> toJson() => _$ShippingToJson(this);
 }

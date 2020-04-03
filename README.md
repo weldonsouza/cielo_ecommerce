@@ -5,7 +5,7 @@ Pacote para criar pagamentos usando o SDK da API Cielo e-Commerce. Para mais inf
 ## Como usar o cielo_ecommerce
 Para usar esse plug-in, adicione `cielo_ecommerce` como uma [dependência no seu arquivo pubspec.yaml file](https://flutter.io/platform-plugins/).
 
-Operações aceitas por este plug-in:
+Este plug-in permite:
 - Transação Simples
 - Transação Completa
 - Transação com Análise de Fraude (AF)

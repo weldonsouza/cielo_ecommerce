@@ -15,15 +15,16 @@ class BillingAddress {
 
   BillingAddress(
       {this.street,
-        this.number,
-        this.complement,
-        this.zipCode,
-        this.city,
-        this.state,
-        this.country,
-        this.district});
+      this.number,
+      this.complement,
+      this.zipCode,
+      this.city,
+      this.state,
+      this.country,
+      this.district});
 
   factory BillingAddress.fromJson(Map<String, dynamic> json) =>
       _$BillingAddressFromJson(json);
+
   Map<String, dynamic> toJson() => _$BillingAddressToJson(this);
 }

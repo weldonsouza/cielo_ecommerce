@@ -23,4 +23,3 @@ export 'src/ReplyData.dart';
 export 'src/Sale.dart';
 export 'src/Shipping.dart';
 export 'src/Travel.dart';
-

@@ -20,21 +20,21 @@ class ReplyData {
 
   ReplyData(
       {this.addressInfoCode,
-        this.factorCode,
-        this.score,
-        this.binCountry,
-        this.cardIssuer,
-        this.cardScheme,
-        this.hostSeverity,
-        this.internetInfoCode,
-        this.ipRoutingMethod,
-        this.scoreModelUsed,
-        this.casePriority,
-        this.providerTransactionId,
-        this.velocityInfoCode
-      });
+      this.factorCode,
+      this.score,
+      this.binCountry,
+      this.cardIssuer,
+      this.cardScheme,
+      this.hostSeverity,
+      this.internetInfoCode,
+      this.ipRoutingMethod,
+      this.scoreModelUsed,
+      this.casePriority,
+      this.providerTransactionId,
+      this.velocityInfoCode});
 
   factory ReplyData.fromJson(Map<String, dynamic> json) =>
       _$ReplyDataFromJson(json);
+
   Map<String, dynamic> toJson() => _$ReplyDataToJson(this);
 }
