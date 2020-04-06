@@ -18,8 +18,8 @@ import 'package:cielo_ecommerce/cielo_ecommerce.dart';
   final CieloEcommerce cielo = CieloEcommerce(
       environment: Environment.SANDBOX,
       merchant: Merchant(
-        merchantId: "8be9b997-32c9-4da7-9e24-0948c089454f",
-        merchantKey: "VSOYQKWVAQYVCJVINXTJESVUBOYNKRDAJELNQMVE",
+        merchantId: "SEU_MERCHANT_ID",
+        merchantKey: "SEU_MERCHANT_KEY",
       ));
 
   _makePayment() async {

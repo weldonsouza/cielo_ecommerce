@@ -17,7 +17,6 @@ class CieloEcommerce {
     try {
       Response response =
           await dio.post("${environment.apiUrl}/1/sales/", data: sale.toJson());
-      print(sale.toJson());
       return Sale.fromJson(response.data);
     } on DioError catch (e) {
       _getErrorDio(e);
