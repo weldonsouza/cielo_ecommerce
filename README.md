@@ -124,8 +124,9 @@ import 'package:cielo_ecommerce/cielo_ecommerce.dart';
       print('paymentId ${response.payment.paymentId}');
       print('returnCode ${response.payment.returnCode}');
 
+      //Obs: FraudAnalysisReasonCode só está disponível em PRODUÇÂO
       //SANDBOX
-      if(response.payment.returnCode == '4' || response.payment.returnCode == '6'){
+      /*if(response.payment.returnCode == '4' || response.payment.returnCode == '6'){
 
         print('fraudAnalysisReasonCode ${response.payment.fraudAnalysis.fraudAnalysisReasonCode}');
 
@@ -138,7 +139,9 @@ import 'package:cielo_ecommerce/cielo_ecommerce.dart';
         }
       } else {
         print('Transação não autorizada. Cod.: ${response.payment.returnCode}');
-      }
+      }*/
+
+      print('Operação realizada com sucesso!');
 
     } on CieloException catch (e) {
       print(e);
