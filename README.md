@@ -1,5 +1,7 @@
 # cielo_ecommerce
 
+[![pub package](https://img.shields.io/pub/v/cielo_ecommerce?color=blue)](https://pub.dev/packages/cielo_ecommerce)
+
 Pacote para criar pagamentos usando o SDK da API Cielo e-Commerce. Para mais informações acesse a [`documentação`](https://developercielo.github.io/manual/cielo-ecommerce) oficial da Cielo e-Commerce para desenvolvedores.
 
 ## Como usar o cielo_ecommerce
