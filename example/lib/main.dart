@@ -23,6 +23,9 @@ class MyHomePage extends StatefulWidget {
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
+var paymentId;
+var status;
+var enableAction;
 
 class _MyHomePageState extends State<MyHomePage> {
   final CieloEcommerce cielo = CieloEcommerce(
@@ -61,6 +64,24 @@ class _MyHomePageState extends State<MyHomePage> {
       var response = await cielo.createSale(sale);
 
       print('paymentId ${response.payment.paymentId}');
+      paymentId = response.payment.paymentId;
+      status = response.payment.status;
+
+      /*//Opcional
+      //Habilitar aprovação ou cancelamento automaticamente dependendo do resultado do ReturnCode
+      if(response.payment.returnCode == '00'){
+        print('Transação autorizada.');
+        enableAction = await cielo.enableCapture(paymentId);
+        print(enableAction.toJson());
+        status = enableAction.status;
+      } else {
+        print('Transação não autorizada.');
+        enableAction = await cielo.enableVoid(paymentId);
+        print(enableAction.toJson());
+        status = enableAction.status;
+      }*/
+
+      setState(() {});
 
     } on CieloException catch (e) {
       print(e);
@@ -169,15 +190,68 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              'You have pushed the button this many times:',
+              'Status: $status',
             ),
+            RaisedButton(
+                child: Text('Consultar', style: TextStyle(color: Colors.white)),
+                color: Colors.blue,
+                onPressed: () async {
+                  print('Consultar');
+                  try {
+
+                    enableAction = await cielo.getReturn(paymentId);
+                    setState(() {});
+
+                  } on CieloException catch (e) {
+                    print(e);
+                    print(e.message);
+                    print(e.errors[0].message);
+                    print(e.errors[0].code);
+                  }
+                }),
+            RaisedButton(
+              child: Text('Aprovar', style: TextStyle(color: Colors.white)),
+              color: Colors.green,
+              onPressed: () async {
+                print('Aprovar');
+                try {
+
+                  enableAction = await cielo.enableCapture(paymentId);
+                  status = enableAction.status;
+                  setState(() {});
+
+                } on CieloException catch (e) {
+                  print(e);
+                  print(e.message);
+                  print(e.errors[0].message);
+                  print(e.errors[0].code);
+                }
+            }),
+            RaisedButton(
+                child: Text('Cancelar', style: TextStyle(color: Colors.white)),
+                color: Colors.red,
+                onPressed: () async {
+                  print('Cancelar');
+                  try {
+
+                    enableAction = await cielo.enableVoid(paymentId);
+                    status = enableAction.status;
+                    setState(() {});
+
+                  } on CieloException catch (e) {
+                    print(e);
+                    print(e.message);
+                    print(e.errors[0].message);
+                    print(e.errors[0].code);
+                  }
+                }),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _makePayment,
         tooltip: 'Increment',
-        child: Icon(Icons.add),
+        child: Icon(Icons.payment),
       ),
     );
   }

@@ -20,6 +20,7 @@ export 'src/MerchantDefinedFields.dart';
 export 'src/Passenger.dart';
 export 'src/Payment.dart';
 export 'src/ReplyData.dart';
+export 'src/ReturnExecutionStatus.dart';
 export 'src/Sale.dart';
 export 'src/Shipping.dart';
 export 'src/Travel.dart';

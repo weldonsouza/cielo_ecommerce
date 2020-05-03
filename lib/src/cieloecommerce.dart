@@ -32,6 +32,63 @@ class CieloEcommerce {
     return null;
   }
 
+  Future<Sale> getReturn(getSale) async {
+    try {
+      Response response =
+          await dio.get("${environment.apiQueryUrl}/1/sales/$getSale");
+      return Sale.fromJson(response.data);
+    } on DioError catch (e) {
+      _getErrorDio(e);
+    } catch (e) {
+      throw CieloException(
+          List<CieloError>()
+            ..add(CieloError(
+              code: 0,
+              message: e.message,
+            )),
+          "unknown");
+    }
+    return null;
+  }
+
+  Future<ReturnExecutionStatus> enableCapture(captureSale) async {
+    try {
+      Response response =
+          await dio.put("${environment.apiUrl}/1/sales/$captureSale/capture");
+      return ReturnExecutionStatus.fromJson(response.data);
+    } on DioError catch (e) {
+      _getErrorDio(e);
+    } catch (e) {
+      throw CieloException(
+          List<CieloError>()
+            ..add(CieloError(
+              code: 0,
+              message: e.message,
+            )),
+          "unknown");
+    }
+    return null;
+  }
+
+  Future<ReturnExecutionStatus> enableVoid(voidSale) async {
+    try {
+      Response response =
+          await dio.put("${environment.apiUrl}/1/sales/$voidSale/void");
+      return ReturnExecutionStatus.fromJson(response.data);
+    } on DioError catch (e) {
+      _getErrorDio(e);
+    } catch (e) {
+      throw CieloException(
+          List<CieloError>()
+            ..add(CieloError(
+              code: 0,
+              message: e.message,
+            )),
+          "unknown");
+    }
+    return null;
+  }
+
   _getErrorDio(DioError e) {
     if (e?.response != null) {
       List<CieloError> errors =

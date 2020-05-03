@@ -41,6 +41,9 @@ Payment _$PaymentFromJson(Map<String, dynamic> json) {
             (e) => e == null ? null : Link.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     capturedDate: json['CapturedDate'] as String,
+    capturedAmount: json['CapturedAmount'] as int,
+    voidedDate: json['VoidedDate'] as String,
+    voidedAmount: json['VoidedAmount'] as int,
   );
 }
 
@@ -79,6 +82,9 @@ Map<String, dynamic> _$PaymentToJson(Payment instance) {
   writeNotNull('Country', instance.country);
   writeNotNull('Links', instance.links);
   writeNotNull('CapturedDate', instance.capturedDate);
+  writeNotNull('CapturedAmount', instance.capturedAmount);
+  writeNotNull('VoidedDate', instance.voidedDate);
+  writeNotNull('VoidedAmount', instance.voidedAmount);
 
   return val;
 }

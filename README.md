@@ -1,16 +1,27 @@
 # cielo_ecommerce
 
 [![pub package](https://img.shields.io/pub/v/cielo_ecommerce?color=blue)](https://pub.dev/packages/cielo_ecommerce)
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QXAGLGQU9LET8&source=url)
 
 Pacote para criar pagamentos usando o SDK da API Cielo e-Commerce. Para mais informações acesse a [`documentação`](https://developercielo.github.io/manual/cielo-ecommerce) oficial da Cielo e-Commerce para desenvolvedores.
-
-## Como usar o cielo_ecommerce
-Para usar esse plug-in, adicione `cielo_ecommerce` como uma [dependência no seu arquivo pubspec.yaml](https://flutter.io/platform-plugins/).
 
 Este plug-in permite:
 - Transação Simples
 - Transação Completa
 - Transação com Análise de Fraude (AF)
+
+## Como usar o cielo_ecommerce
+1. Adicione dependência a `pubspec.yaml`
+
+```dart
+dependencies:
+    cielo_ecommerce: ^1.0.0
+```
+
+2. Importar o pacote
+```dart
+import 'package:cielo_ecommerce/cielo_ecommerce.dart';
+```
 
 ### Example transação simples
 
@@ -154,5 +165,9 @@ import 'package:cielo_ecommerce/cielo_ecommerce.dart';
   }
 ...
 ```
+- *Funções opcionais*
+    * getReturn(paymentId) - Função para consulta
+    * enableCapture(paymentId) - Função para aprovar a compra
+    * enableVoid(paymentId) - Função para cancelar a compra
 
 Consulte o aplicativo de exemplo deste plugin para obter um exemplo completo.

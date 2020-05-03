@@ -1,6 +1,6 @@
 name: cielo_ecommerce
 description: Pacote para criar pagamentos usando o SDK da API Cielo e-Commerce. Para mais informações acesse a documentação oficial da Cielo e-Commerce para desenvolvedores.
-version: 0.1.2
+version: 1.0.0
 homepage: https://github.com/weldonsouza/cielo_ecommerce
 
 environment:
