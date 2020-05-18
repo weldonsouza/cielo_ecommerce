@@ -24,8 +24,9 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 }
 var paymentId;
-var status;
+var status = 0;
 var enableAction;
+var returnMessage;
 
 class _MyHomePageState extends State<MyHomePage> {
   final CieloEcommerce cielo = CieloEcommerce(
@@ -151,6 +152,8 @@ class _MyHomePageState extends State<MyHomePage> {
       print('returnCode ${response.payment.returnCode}');
 
       //Obs: FraudAnalysisReasonCode só está disponível em PRODUÇÂO
+      //PRODUCTION
+      //if(response.payment.returnCode == '00'){
       //SANDBOX
       /*if(response.payment.returnCode == '4' || response.payment.returnCode == '6'){
 
@@ -181,6 +184,16 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    if(status == 0){
+      returnMessage = 'Aguardando atualização de status';
+    } else if(status == 1){
+      returnMessage = 'Pagamento apto a ser capturado ou definido como pago';
+    } else if(status == 2){
+      returnMessage = 'Pagamento confirmado e finalizado';
+    } else if(status == 10){
+      returnMessage = 'Pagamento cancelado';
+    }
+
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
@@ -189,8 +202,12 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-              'Status: $status',
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              child: Text(
+                'Status: $status - $returnMessage',
+                textAlign: TextAlign.center,
+              ),
             ),
             RaisedButton(
                 child: Text('Consultar', style: TextStyle(color: Colors.white)),
@@ -218,6 +235,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
                   enableAction = await cielo.enableCapture(paymentId);
                   status = enableAction.status;
+
                   setState(() {});
 
                 } on CieloException catch (e) {

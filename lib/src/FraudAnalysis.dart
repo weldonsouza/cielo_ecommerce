@@ -1,9 +1,7 @@
-import 'package:json_annotation/json_annotation.dart';
 import '../cielo_ecommerce.dart';
 
 part 'FraudAnalysis.g.dart';
 
-@JsonSerializable(includeIfNull: false)
 class FraudAnalysis {
   String id;
   int status;

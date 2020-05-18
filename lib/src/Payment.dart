@@ -1,9 +1,7 @@
-import 'package:json_annotation/json_annotation.dart';
 import '../cielo_ecommerce.dart';
 
 part 'Payment.g.dart';
 
-@JsonSerializable(includeIfNull: false)
 class Payment {
   int serviceTaxAmount;
   int installments;

@@ -1,8 +1,5 @@
-import 'package:json_annotation/json_annotation.dart';
-
 part 'ReplyData.g.dart';
 
-@JsonSerializable(includeIfNull: false)
 class ReplyData {
   String addressInfoCode;
   String factorCode;

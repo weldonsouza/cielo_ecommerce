@@ -1,8 +1,5 @@
-import 'package:json_annotation/json_annotation.dart';
-
 part 'DeliveryAddress.g.dart';
 
-@JsonSerializable(includeIfNull: false)
 class DeliveryAddress {
   String street;
   String number;

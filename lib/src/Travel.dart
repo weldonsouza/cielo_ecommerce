@@ -1,9 +1,7 @@
-import 'package:json_annotation/json_annotation.dart';
 import '../cielo_ecommerce.dart';
 
 part 'Travel.g.dart';
 
-@JsonSerializable(includeIfNull: false)
 class Travel {
   String route;
   String departureTime;

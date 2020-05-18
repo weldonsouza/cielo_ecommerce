@@ -1,8 +1,5 @@
-import 'package:json_annotation/json_annotation.dart';
-
 part 'Browser.g.dart';
 
-@JsonSerializable(includeIfNull: false)
 class Browser {
   String hostName;
   bool cookiesAccepted;

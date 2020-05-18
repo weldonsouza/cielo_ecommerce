@@ -1,8 +1,5 @@
-import 'package:json_annotation/json_annotation.dart';
-
 part 'Legs.g.dart';
 
-@JsonSerializable(includeIfNull: false)
 class Legs {
   String destination;
   String origin;

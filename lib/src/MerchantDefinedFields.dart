@@ -1,8 +1,5 @@
-import 'package:json_annotation/json_annotation.dart';
-
 part 'MerchantDefinedFields.g.dart';
 
-@JsonSerializable(includeIfNull: false)
 class MerchantDefinedFields {
   dynamic id;
   String value;

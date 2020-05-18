@@ -1,9 +1,7 @@
-import 'package:json_annotation/json_annotation.dart';
 import '../cielo_ecommerce.dart';
 
 part 'Cart.g.dart';
 
-@JsonSerializable(includeIfNull: false)
 class Cart {
   bool isGift;
   bool returnsAccepted;

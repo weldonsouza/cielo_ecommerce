@@ -1,9 +1,7 @@
-import 'package:json_annotation/json_annotation.dart';
 import '../cielo_ecommerce.dart';
 
 part 'ReturnExecutionStatus.g.dart';
 
-@JsonSerializable(includeIfNull: false)
 class ReturnExecutionStatus {
   int status;
   int reasonCode;

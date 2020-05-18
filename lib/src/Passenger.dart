@@ -1,8 +1,5 @@
-import 'package:json_annotation/json_annotation.dart';
-
 part 'Passenger.g.dart';
 
-@JsonSerializable(includeIfNull: false)
 class Passenger {
   String name;
   String identity;

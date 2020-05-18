@@ -1,9 +1,7 @@
-import 'package:json_annotation/json_annotation.dart';
 import '../cielo_ecommerce.dart';
 
 part 'Items.g.dart';
 
-@JsonSerializable(includeIfNull: false)
 class Items {
   dynamic giftCategory;
   dynamic hostHedge;

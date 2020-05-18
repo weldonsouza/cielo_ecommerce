@@ -1,3 +1,8 @@
+## [1.0.1] - 18 de Maio 2020.
+
+* Otimização de código
+* Atualização do example
+
 ## [1.0.0] - 02 de Maio 2020.
 
 * Funções adicionadas:

@@ -1,8 +1,5 @@
-import 'package:json_annotation/json_annotation.dart';
-
 part 'Link.g.dart';
 
-@JsonSerializable(includeIfNull: false)
 class Link {
   String method;
   String rel;
