@@ -138,6 +138,8 @@ import 'package:cielo_ecommerce/cielo_ecommerce.dart';
       print('returnCode ${response.payment.returnCode}');
 
       //Obs: FraudAnalysisReasonCode só está disponível em PRODUÇÂO
+      //PRODUCTION
+      /*if(response.payment.returnCode == '00'){
       //SANDBOX
       /*if(response.payment.returnCode == '4' || response.payment.returnCode == '6'){
 
