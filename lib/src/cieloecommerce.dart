@@ -19,6 +19,7 @@ class CieloEcommerce {
           await dio.post("${environment.apiUrl}/1/sales/", data: sale.toJson());
       return Sale.fromJson(response.data);
     } on DioError catch (e) {
+      var error;
       if (e?.response != null && e?.response != "") {
         if (e.response.data != null) {
           if (e.response.statusCode == 500) {
