@@ -14,6 +14,8 @@ CreditCard _$CreditCardFromJson(Map<String, dynamic> json) {
     saveCard: json['SaveCard'],
     securityCode: json['SecurityCode'] as String,
     brand: json['Brand'] as String,
+    customerName: json['CustomerName'] as String,
+    cardToken: json['CardToken'] as String,
   );
 }
 
@@ -32,5 +34,7 @@ Map<String, dynamic> _$CreditCardToJson(CreditCard instance) {
   writeNotNull('SaveCard', instance.saveCard);
   writeNotNull('SecurityCode', instance.securityCode);
   writeNotNull('Brand', instance.brand);
+  writeNotNull('CardToken', instance.cardToken);
+  writeNotNull('CustomerName', instance.customerName);
   return val;
 }
