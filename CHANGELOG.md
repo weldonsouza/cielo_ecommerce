@@ -1,3 +1,8 @@
+## [1.0.2] - 19 de Junho 2020.
+
+* Correção no _getErrorDio()
+* Adicionado Cartão Tokenizando
+
 ## [1.0.1] - 18 de Maio 2020.
 
 * Otimização de código

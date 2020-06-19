@@ -10,16 +10,16 @@ class CreditCard {
   String customerName;
   String cardToken;
 
-  CreditCard(
-      {this.cardNumber,
-      this.holder,
-      this.expirationDate,
-      this.saveCard,
-      this.securityCode,
-      this.brand,
-      this.cardToken,
-      this.customerName,
-      });
+  CreditCard({
+    this.cardNumber,
+    this.holder,
+    this.expirationDate,
+    this.saveCard,
+    this.securityCode,
+    this.brand,
+    this.cardToken,
+    this.customerName,
+  });
 
   factory CreditCard.token(
       {String cardToken, String securityCode, String brand}) {

@@ -120,7 +120,6 @@ class CieloEcommerce {
             if (e.response?.data["Message"] != null) {
               error = e.response?.data["Message"]?.toString();
               if (e.response?.data["ExceptionMessage"] != null) {
-                print('Foi Dio nested');
                 error =
                 "$error Details: ${e.response?.data["ExceptionMessage"]
                     ?.toString()}";
@@ -128,11 +127,9 @@ class CieloEcommerce {
             }
           }
         } else {
-          print('Foi Dio Exception');
           error = e.response.toString();
         }
       }
     }
-    print(error);
   }
 }
