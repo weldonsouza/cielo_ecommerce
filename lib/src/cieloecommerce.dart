@@ -19,7 +19,27 @@ class CieloEcommerce {
           await dio.post("${environment.apiUrl}/1/sales/", data: sale.toJson());
       return Sale.fromJson(response.data);
     } on DioError catch (e) {
-      _getErrorDio(e);
+      if (e?.response != null && e?.response != "") {
+        if (e.response.data != null) {
+          if (e.response.statusCode == 500) {
+            if (e.response.data != null) {
+              if (e.response?.data["Message"] != null) {
+                error = e.response?.data["Message"]?.toString();
+                if (e.response?.data["ExceptionMessage"] != null) {
+                  print('Foi Dio nested');
+                  error =
+                  "$error Details: ${e.response?.data["ExceptionMessage"]
+                      ?.toString()}";
+                }
+              }
+            }
+          } else {
+            print('Foi Dio Exception');
+            error = e.response.toString();
+          }
+        }
+      }
+      print(error);
     } catch (e) {
       throw CieloException(
           List<CieloError>()
