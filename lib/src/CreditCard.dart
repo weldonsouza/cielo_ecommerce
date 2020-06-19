@@ -7,6 +7,8 @@ class CreditCard {
   dynamic saveCard;
   String securityCode;
   String brand;
+  String customerName;
+  String cardToken;
 
   CreditCard(
       {this.cardNumber,
@@ -14,7 +16,16 @@ class CreditCard {
       this.expirationDate,
       this.saveCard,
       this.securityCode,
-      this.brand});
+      this.brand,
+      this.cardToken,
+      this.customerName,
+      });
+
+  factory CreditCard.token(
+      {String cardToken, String securityCode, String brand}) {
+    return CreditCard(
+        cardToken: cardToken, securityCode: securityCode, brand: brand);
+  }
 
   factory CreditCard.fromJson(Map<String, dynamic> json) =>
       _$CreditCardFromJson(json);
