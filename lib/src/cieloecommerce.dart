@@ -19,28 +19,7 @@ class CieloEcommerce {
           await dio.post("${environment.apiUrl}/1/sales/", data: sale.toJson());
       return Sale.fromJson(response.data);
     } on DioError catch (e) {
-      var error;
-      if (e?.response != null && e?.response != "") {
-        if (e.response.data != null) {
-          if (e.response.statusCode == 500) {
-            if (e.response.data != null) {
-              if (e.response?.data["Message"] != null) {
-                error = e.response?.data["Message"]?.toString();
-                if (e.response?.data["ExceptionMessage"] != null) {
-                  print('Foi Dio nested');
-                  error =
-                  "$error Details: ${e.response?.data["ExceptionMessage"]
-                      ?.toString()}";
-                }
-              }
-            }
-          } else {
-            print('Foi Dio Exception');
-            error = e.response.toString();
-          }
-        }
-      }
-      print(error);
+      _getErrorDio(e);
     } catch (e) {
       throw CieloException(
           List<CieloError>()
@@ -110,15 +89,50 @@ class CieloEcommerce {
     return null;
   }
 
-  _getErrorDio(DioError e) {
-    if (e?.response != null) {
-      List<CieloError> errors =
-          (e.response.data as List).map((i) => CieloError.fromJson(i)).toList();
-      throw CieloException(errors, e.message);
-    } else {
+  Future<CreditCard> tokenizeCard(CreditCard card) async {
+    try {
+      Response response =
+      await dio.post("${environment.apiUrl}/1/card/", data: card.toJson());
+      card.cardToken = response.data["CardToken"];
+      card.cardNumber = "****"+card.cardNumber.substring(card.cardNumber.length - 4);
+      return card;
+    } on DioError catch (e) {
+      _getErrorDio(e);
+    } catch (e) {
       throw CieloException(
-          List<CieloError>()..add(CieloError(code: 0, message: "unknown")),
-          e.message);
+          List<CieloError>()
+            ..add(CieloError(
+              code: 0,
+              message: e.message,
+            )),
+          "unknown");
     }
+    return null;
+  }
+
+
+  _getErrorDio(DioError e) {
+    var error;
+    if (e?.response != null && e?.response != "") {
+      if (e.response.data != null) {
+        if (e.response.statusCode == 500) {
+          if (e.response.data != null) {
+            if (e.response?.data["Message"] != null) {
+              error = e.response?.data["Message"]?.toString();
+              if (e.response?.data["ExceptionMessage"] != null) {
+                print('Foi Dio nested');
+                error =
+                "$error Details: ${e.response?.data["ExceptionMessage"]
+                    ?.toString()}";
+              }
+            }
+          }
+        } else {
+          print('Foi Dio Exception');
+          error = e.response.toString();
+        }
+      }
+    }
+    print(error);
   }
 }
