@@ -91,6 +91,60 @@ class _MyHomePageState extends State<MyHomePage> {
       print(e.errors[0].code);
     }
 
+/*
+    print("Iniciando pagamento tokenizado....");
+    //Objeto de venda
+    Sale sale = Sale(
+        merchantOrderId: "2020032601", // Numero de identificação do Pedido
+        customer: Customer(
+          name: "Comprador crédito simples", // Nome do Comprador
+        ),
+        payment: Payment(
+            type: TypePayment.creditCard, // Tipo do Meio de Pagamento
+            amount: 9, // Valor do Pedido (ser enviado em centavos)
+            installments: 1, // Número de Parcelas
+            softDescriptor: "Mensagem", // Descrição que aparecerá no extrato do usuário. Apenas 15 caracteres
+            creditCard: CreditCard(
+              cardToken: "db62dc71-d07b-4745-9969-42697b988ccb", // Cartão tokenizado
+              securityCode: '123', // Código de segurança impresso no verso do cartão
+              brand: 'Visa', // Bandeira do cartão
+            )
+        )
+    );
+
+    try{
+      var response = await cielo.createSale(sale);
+      print('paymentId ${response.payment.paymentId}');
+      paymentId = response.payment.paymentId;
+      status = response.payment.status;
+
+    } on CieloException catch(e){
+      print(e.message);
+      print(e.errors[0].message);
+      print(e.errors[0].code);
+    }
+
+     print("Tokenizando cartão....");
+
+     CreditCard cart = CreditCard(
+       customerName: "Comprador Teste Cielo",
+       cardNumber: "4532117080573700",
+       securityCode: "123",
+       holder: "Comprador T Cielo",
+       expirationDate: "12/2030",
+       brand: "Visa",
+     );
+     try {
+       var response = await cielo.tokenizeCard(cart);
+       print(response.cardToken);
+       print(response.cardNumber);
+     } on CieloException catch (e) {
+       print(e);
+       print(e.message);
+       print(e.errors[0].message);
+       print(e.errors[0].code);
+     }
+*/
 
 /*
     print("Transação com Análise de Fraude (AF)");

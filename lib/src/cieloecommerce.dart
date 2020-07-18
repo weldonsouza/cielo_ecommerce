@@ -92,9 +92,10 @@ class CieloEcommerce {
   Future<CreditCard> tokenizeCard(CreditCard card) async {
     try {
       Response response =
-      await dio.post("${environment.apiUrl}/1/card/", data: card.toJson());
+          await dio.post("${environment.apiUrl}/1/card/", data: card.toJson());
       card.cardToken = response.data["CardToken"];
-      card.cardNumber = "****"+card.cardNumber.substring(card.cardNumber.length - 4);
+      card.cardNumber =
+          "****" + card.cardNumber.substring(card.cardNumber.length - 4);
       return card;
     } on DioError catch (e) {
       _getErrorDio(e);
@@ -110,9 +111,9 @@ class CieloEcommerce {
     return null;
   }
 
-
   _getErrorDio(DioError e) {
     var error;
+    // ignore: unrelated_type_equality_checks
     if (e?.response != null && e?.response != "") {
       if (e.response.data != null) {
         if (e.response.statusCode == 500) {
@@ -121,8 +122,7 @@ class CieloEcommerce {
               error = e.response?.data["Message"]?.toString();
               if (e.response?.data["ExceptionMessage"] != null) {
                 error =
-                "$error Details: ${e.response?.data["ExceptionMessage"]
-                    ?.toString()}";
+                    "$error Details: ${e.response?.data["ExceptionMessage"]?.toString()}";
               }
             }
           }

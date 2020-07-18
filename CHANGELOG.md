@@ -1,3 +1,8 @@
+## [1.0.3] - 18 de Julho 2020.
+
+* Correções de formatação
+* Adicionando example de transação com cartão tokenizado
+
 ## [1.0.2] - 19 de Junho 2020.
 
 * Correção no _getErrorDio()
