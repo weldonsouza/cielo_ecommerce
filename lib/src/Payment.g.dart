@@ -44,6 +44,17 @@ Payment _$PaymentFromJson(Map<String, dynamic> json) {
     capturedAmount: json['CapturedAmount'] as int,
     voidedDate: json['VoidedDate'] as String,
     voidedAmount: json['VoidedAmount'] as int,
+    address: json['Address'] as String,
+    boletoNumber: json['BoletoNumber'] as String,
+    assignor: json['Assignor'] as String,
+    demonstrative: json['Demonstrative'] as String,
+    expirationDate: json['ExpirationDate'] as String,
+    identification: json['Identification'] as String,
+    instructions: json['Instructions'] as String,
+    url: json['Url'] as String,
+    barCodeNumber: json['BarCodeNumber'] as String,
+    digitableLine: json['DigitableLine'] as String,
+    bank: json['Bank'] as int,
   );
 }
 
@@ -85,6 +96,17 @@ Map<String, dynamic> _$PaymentToJson(Payment instance) {
   writeNotNull('CapturedAmount', instance.capturedAmount);
   writeNotNull('VoidedDate', instance.voidedDate);
   writeNotNull('VoidedAmount', instance.voidedAmount);
+  writeNotNull('Address', instance.address);
+  writeNotNull('BoletoNumber', instance.boletoNumber);
+  writeNotNull('Assignor', instance.assignor);
+  writeNotNull('Demonstrative', instance.demonstrative);
+  writeNotNull('ExpirationDate', instance.expirationDate);
+  writeNotNull('Identification', instance.identification);
+  writeNotNull('Instructions', instance.instructions);
+  writeNotNull('Url', instance.url);
+  writeNotNull('BarCodeNumber', instance.barCodeNumber);
+  writeNotNull('DigitableLine', instance.digitableLine);
+  writeNotNull('Bank', instance.bank);
 
   return val;
 }

@@ -13,6 +13,7 @@ class CieloEcommerce {
     }));
   }
 
+  ///Criando uma transação de compra
   Future<Sale> createSale(Sale sale) async {
     try {
       Response response =
@@ -32,6 +33,7 @@ class CieloEcommerce {
     return null;
   }
 
+  ///Função para consulta das transações
   Future<Sale> getReturn(getSale) async {
     try {
       Response response =
@@ -51,6 +53,7 @@ class CieloEcommerce {
     return null;
   }
 
+  ///Função para aprovar a compra
   Future<ReturnExecutionStatus> enableCapture(captureSale) async {
     try {
       Response response =
@@ -70,6 +73,7 @@ class CieloEcommerce {
     return null;
   }
 
+  ///Função para cancelar a compra
   Future<ReturnExecutionStatus> enableVoid(voidSale) async {
     try {
       Response response =
@@ -89,6 +93,7 @@ class CieloEcommerce {
     return null;
   }
 
+  ///Função para Tokenizar um Cartão
   Future<CreditCard> tokenizeCard(CreditCard card) async {
     try {
       Response response =
@@ -111,6 +116,7 @@ class CieloEcommerce {
     return null;
   }
 
+  ///Função de tratamento de erros
   _getErrorDio(DioError e) {
     var error;
     // ignore: unrelated_type_equality_checks

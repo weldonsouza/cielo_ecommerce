@@ -1,3 +1,8 @@
+## [1.0.4] - 03 de Setembro 2020.
+
+* Adicionando Transação com Boleto
+* Atualização do package dio
+
 ## [1.0.3] - 18 de Julho 2020.
 
 * Correções de formatação

@@ -234,6 +234,59 @@ class _MyHomePageState extends State<MyHomePage> {
     }
 */
 
+/*
+    print("Operação por Boleto");
+    print("Gerando boleto....");
+    //Objeto de venda
+    Sale sale = Sale(
+      merchantOrderId: "2020032601", // Numero de identificação do Pedido
+      customer: Customer(
+        name: "Comprador crédito simples", // Nome do Comprador
+        identity: "12345678909", // Número do CPF
+        address: Address(
+          street: "Avenida Marechal Câmara", // Endereço do Comprador.
+          number: "160", // Número do endereço do Comprador.
+          complement: "Sala 934",
+          zipCode: "22750012", // CEP do endereço do Comprador.
+          district: "Centro", // Bairro do Comprador.
+          city: "Rio de Janeiro", // Cidade do endereço do Comprador.
+          state: "RJ", // Estado do endereço do Comprador.
+          country: "BRA" // Pais do endereço do Comprador.
+        )),
+      payment: Payment(
+        type: TypePayment.boleto, // Tipo do Meio de Pagamento
+        amount: 10, // Valor do Pedido (ser enviado em centavos)
+        provider: "bradesco2", // Banco (A API Aceita apenas boletos Bradesco e Banco do Brasil).
+        address: "Rua Teste", // Nome do Cedente.
+        boletoNumber: "123", // Número do Boleto enviado pelo lojista. Usado para contar boletos emitidos (“NossoNumero”).
+        assignor: "Empresa Teste",
+        demonstrative: "Desmonstrative Teste", // Texto de Demonstrativo.
+        expirationDate: "5/1/2015", // Data de expiração do Boleto. Ex. 2020-12-31
+        identification: "11884926754", // Documento de identificação do Cedente.
+        instructions: "Aceitar somente até a data de vencimento, após essa data juros de 1% dia.", // Instruções do Boleto.
+      ),
+    );
+
+    try {
+      var response = await cielo.createSale(sale);
+
+      print('paymentId ${response.payment.paymentId}');
+      print('payment ${response.payment.toJson()}');
+      print('url do boleto ${response.payment.url}');
+      print('link de consulta ${response.payment.links[0].href}');
+
+      paymentId = response.payment.paymentId;
+      status = response.payment.status;
+
+      setState(() {});
+
+    } on CieloException catch (e) {
+      print(e);
+      print(e.message);
+      print(e.errors[0].message);
+      print(e.errors[0].code);
+    }
+*/
   }
 
   @override
