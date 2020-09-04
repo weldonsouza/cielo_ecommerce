@@ -298,4 +298,4 @@ import 'package:cielo_ecommerce/cielo_ecommerce.dart';
     * enableCapture(paymentId) - Função para aprovar a compra
     * enableVoid(paymentId) - Função para cancelar a compra
 
-Consulte o aplicativo de exemplo deste plugin para obter um exemplo completo.
+Consulte o aplicativo de exemplo deste plugin para obter um exemplo completo. Consulte [LICENÇA](./LICENSE) para obter detalhes.
