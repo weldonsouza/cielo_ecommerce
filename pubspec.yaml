@@ -1,6 +1,6 @@
 name: cielo_ecommerce
 description: Pacote para criar pagamentos usando o SDK da API Cielo e-Commerce. Para mais informações acesse a documentação oficial da Cielo e-Commerce para desenvolvedores.
-version: 1.0.4
+version: 1.0.5
 homepage: https://github.com/weldonsouza/cielo_ecommerce
 
 environment:
@@ -9,7 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  dio: ^3.0.10
+  dio: ^4.0.0
 
 dev_dependencies:
   flutter_test:

@@ -1,3 +1,7 @@
+## [1.0.5] - 19 de Abril 2021.
+
+* Atualização do package dio
+
 ## [1.0.4] - 03 de Setembro 2020.
 
 * Adicionando Transação com Boleto

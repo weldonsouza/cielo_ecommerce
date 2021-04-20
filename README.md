@@ -17,7 +17,7 @@ Este plug-in permite:
 
 ```dart
 dependencies:
-    cielo_ecommerce: ^1.0.4
+    cielo_ecommerce: ^1.0.5
 ```
 
 2. Importar o pacote
