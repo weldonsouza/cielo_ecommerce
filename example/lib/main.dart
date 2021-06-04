@@ -326,7 +326,15 @@ class _MyHomePageState extends State<MyHomePage> {
                   print('Consultar');
                   try {
 
+                    // Retorna Sale com dados da consulta
                     enableAction = await cielo.getReturn(paymentId);
+
+                    // Dá o resultado completo da consulta
+                    print(enableAction.toJson());
+
+                    // Atualização do status da compra
+                    status = enableAction.toJson()['Payment'].toJson()['Status'];
+
                     setState(() {});
 
                   } on CieloException catch (e) {
