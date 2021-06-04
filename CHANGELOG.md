@@ -1,3 +1,7 @@
+## [2.0.0] - 03 de Junho 2021.
+
+* Migrate to null safety
+
 ## [1.0.5] - 19 de Abril 2021.
 
 * Atualização do package dio
