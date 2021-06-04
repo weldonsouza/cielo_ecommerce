@@ -95,6 +95,7 @@ class CieloEcommerce {
   _getErrorDio(DioError e) {
     var error;
 
+    // ignore: unrelated_type_equality_checks
     if (e.response != null && e.response != "") {
       if (e.response!.data != null) {
         if (e.response!.statusCode == 500) {

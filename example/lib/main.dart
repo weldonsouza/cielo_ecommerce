@@ -1,5 +1,6 @@
-import 'package:flutter/material.dart';
+
 import 'package:cielo_ecommerce/cielo_ecommerce.dart';
+import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
 
@@ -17,14 +18,14 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-  final String title;
+  MyHomePage({Key? key, this.title}) : super(key: key);
+  final String? title;
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
 var paymentId;
-var status = 0;
+int? status = 0;
 var enableAction;
 var returnMessage;
 
@@ -62,11 +63,11 @@ class _MyHomePageState extends State<MyHomePage> {
     );
 
     try {
-      var response = await cielo.createSale(sale);
+      var response = await (cielo.createSale(sale));
 
-      print('paymentId ${response.payment.paymentId}');
-      paymentId = response.payment.paymentId;
-      status = response.payment.status;
+      print('paymentId ${response!.payment!.paymentId}');
+      paymentId = response.payment!.paymentId;
+      status = response.payment!.status;
 
       /*//Opcional
       //Habilitar aprovação ou cancelamento automaticamente dependendo do resultado do ReturnCode
@@ -303,7 +304,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text(widget.title!),
       ),
       body: Center(
         child: Column(
@@ -316,9 +317,11 @@ class _MyHomePageState extends State<MyHomePage> {
                 textAlign: TextAlign.center,
               ),
             ),
-            RaisedButton(
+            ElevatedButton(
                 child: Text('Consultar', style: TextStyle(color: Colors.white)),
-                color: Colors.blue,
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.blue,
+                ),
                 onPressed: () async {
                   print('Consultar');
                   try {
@@ -333,9 +336,11 @@ class _MyHomePageState extends State<MyHomePage> {
                     print(e.errors[0].code);
                   }
                 }),
-            RaisedButton(
+            ElevatedButton(
               child: Text('Aprovar', style: TextStyle(color: Colors.white)),
-              color: Colors.green,
+              style: ElevatedButton.styleFrom(
+                primary: Colors.green,
+              ),
               onPressed: () async {
                 print('Aprovar');
                 try {
@@ -352,9 +357,11 @@ class _MyHomePageState extends State<MyHomePage> {
                   print(e.errors[0].code);
                 }
             }),
-            RaisedButton(
+            ElevatedButton(
                 child: Text('Cancelar', style: TextStyle(color: Colors.white)),
-                color: Colors.red,
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.red,
+                ),
                 onPressed: () async {
                   print('Cancelar');
                   try {
