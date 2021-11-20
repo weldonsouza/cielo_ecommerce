@@ -11,6 +11,7 @@ class Payment {
   bool? authenticate;
   bool? recurrent;
   CreditCard? creditCard;
+  Wallet? wallet;
   String? tid;
   String? proofOfSale;
   String? authorizationCode;
@@ -53,6 +54,7 @@ class Payment {
       this.authenticate,
       this.recurrent,
       this.creditCard,
+      this.wallet,
       this.tid,
       this.proofOfSale,
       this.authorizationCode,
@@ -97,4 +99,6 @@ class TypePayment {
   static String get creditCard => 'CreditCard';
 
   static String get boleto => 'Boleto';
+
+  static String get androidPay => 'AndroidPay';
 }

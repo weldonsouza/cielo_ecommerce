@@ -11,13 +11,14 @@ Este plug-in permite:
 - Transação com Cartão Tokenizado
 - Transação com Análise de Fraude (AF)
 - Transação com Boleto
+- Transação com Google Pay
 
 ## Como usar o cielo_ecommerce
 1. Adicione dependência a `pubspec.yaml`
 
-```dart
+```YAML
 dependencies:
-    cielo_ecommerce: ^2.0.0
+    cielo_ecommerce: ^2.1.0
 ```
 
 2. Importar o pacote
@@ -293,6 +294,70 @@ import 'package:cielo_ecommerce/cielo_ecommerce.dart';
     }
 ...
 ```
+
+### Transação com Google Pay
+
+``` dart
+...
+
+    // Para pagamentos com Google Pay, utilize este pacote em conjunto com o pacote "pay", disponível em pub.dev/packages/pay
+
+
+    print("Operação por Google Pay");
+    //Objeto de venda
+    Sale sale = Sale(
+      merchantOrderId: "2020032601", // Numero de identificação do Pedido
+      customer: Customer(
+        name: "Comprador crédito simples", // Nome do Comprador
+        identity: "12345678909", // Número do CPF
+        address: Address(
+          street: "Avenida Marechal Câmara", // Endereço do Comprador.
+          number: "160", // Número do endereço do Comprador.
+          complement: "Sala 934",
+          zipCode: "22750012", // CEP do endereço do Comprador.
+          district: "Centro", // Bairro do Comprador.
+          city: "Rio de Janeiro", // Cidade do endereço do Comprador.
+          state: "RJ", // Estado do endereço do Comprador.
+          country: "BRA" // Pais do endereço do Comprador.
+        )),
+      payment: Payment(
+        type: TypePayment.creditCard, // Tipo do Meio de Pagamento
+        amount: 9, // Valor do Pedido (ser enviado em centavos)
+        installments: 1, // Número de Parcelas
+        softDescriptor: "Mensagem", // Descrição que aparecerá no extrato do usuário. Apenas 15 caracteres
+        wallet: Wallet(
+          type: TypePayment.androidPay, //Nome da provedora de Meio de Pagamento. Para transações Google Pay, utilize “AndroidPay”
+          walletKey: "{\"encryptedMessage\": \"ZW5jcnlwdGVkTWVzc2FnZQ==\","
+              "\"ephemeralPublicKey\": \"ZXBoZW1lcmFsUHVibGljS2V5\",\"tag\": \"c2lnbmF0dXJl\"}", // Preencher com o valor do parâmetro “signedMessage” retornado pelo Google Pay
+          additionalData: AdditionalData(
+            signature: "ZXBoZW1lcmFsUHVibGljS2V5" //Preencher com o valor do parâmetro “signature” retornado pelo Google Pay
+        )
+        )
+      ),
+    );
+
+    try {
+      var response = await cielo.createSale(sale);
+
+      print('paymentId ${response.payment.paymentId}');
+      print('payment ${response.payment.toJson()}');
+      print('url do boleto ${response.payment.url}');
+      print('link de consulta ${response.payment.links[0].href}');
+
+      paymentId = response.payment.paymentId;
+      status = response.payment.status;
+
+      setState(() {});
+
+    } on CieloException catch (e) {
+      print(e);
+      print(e.message);
+      print(e.errors[0].message);
+      print(e.errors[0].code);
+    }
+...
+```
+
 - *Funções opcionais*
     * getReturn(paymentId) - Função para consulta
     * enableCapture(paymentId) - Função para aprovar a compra

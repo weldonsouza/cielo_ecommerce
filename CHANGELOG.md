@@ -1,3 +1,7 @@
+## [2.1.0] - 20 de Novembro de 2021.
+
+* Adicionando Transação com Google Pay
+
 ## [2.0.0] - 03 de Junho 2021.
 
 * Migrate to null safety

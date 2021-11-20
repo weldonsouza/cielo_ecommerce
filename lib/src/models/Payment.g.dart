@@ -17,6 +17,9 @@ Payment _$PaymentFromJson(Map<String, dynamic> json) {
     creditCard: json['CreditCard'] == null
         ? null
         : CreditCard.fromJson(json['CreditCard'] as Map<String, dynamic>),
+    wallet: json['Wallet'] == null
+        ? null
+        : Wallet.fromJson(json['Wallet'] as Map<String, dynamic>),
     tid: json['Tid'] as String?,
     proofOfSale: json['ProofOfSale'] as String?,
     authorizationCode: json['AuthorizationCode'] as String?,
@@ -73,6 +76,7 @@ Map<String, dynamic> _$PaymentToJson(Payment instance) {
   writeNotNull('Authenticate', instance.authenticate);
   writeNotNull('Recurrent', instance.recurrent);
   writeNotNull('CreditCard', instance.creditCard);
+  writeNotNull('Wallet', instance.wallet);
   writeNotNull('Tid', instance.tid);
   writeNotNull('ProofOfSale', instance.proofOfSale);
   writeNotNull('AuthorizationCode', instance.authorizationCode);
