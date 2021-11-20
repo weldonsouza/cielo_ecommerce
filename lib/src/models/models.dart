@@ -1,3 +1,4 @@
+export 'AdditionalData.dart';
 export 'Address.dart';
 export 'BillingAddress.dart';
 export 'Browser.dart';
@@ -19,3 +20,4 @@ export 'ReturnExecutionStatus.dart';
 export 'Sale.dart';
 export 'Shipping.dart';
 export 'Travel.dart';
+export 'Wallet.dart';
