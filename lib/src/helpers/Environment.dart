@@ -1,3 +1,5 @@
+/// Classe helper de ambiente de homologação e produção
+
 class Environment {
   static Environment get production => const Environment(
       apiUrl: "https://api.cieloecommerce.cielo.com.br",

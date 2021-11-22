@@ -1,5 +1,6 @@
 part 'Legs.g.dart';
 
+/// Classe Legs da documentação oficial Cielo Ecommerce
 class Legs {
   String? destination;
   String? origin;

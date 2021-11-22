@@ -1,5 +1,6 @@
 part 'Link.g.dart';
 
+/// Classe Link da documentação oficial Cielo Ecommerce
 class Link {
   String? method;
   String? rel;

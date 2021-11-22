@@ -1,3 +1,5 @@
+/// Declaracao e exportacao de modelos utilizados no pacote
+
 export 'AdditionalData.dart';
 export 'Address.dart';
 export 'BillingAddress.dart';

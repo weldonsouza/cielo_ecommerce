@@ -6,6 +6,7 @@ part of 'Browser.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
+/// Classe helper de serialização JSON
 Browser _$BrowserFromJson(Map<String, dynamic> json) {
   return Browser(
     hostName: json['HostName'] as String?,
@@ -16,6 +17,7 @@ Browser _$BrowserFromJson(Map<String, dynamic> json) {
   );
 }
 
+/// Classe helper de serialização JSON
 Map<String, dynamic> _$BrowserToJson(Browser instance) {
   final val = <String, dynamic>{};
 

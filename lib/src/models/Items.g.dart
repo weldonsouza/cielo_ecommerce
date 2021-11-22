@@ -6,6 +6,7 @@ part of 'Items.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
+/// Classe helper de serialização JSON
 Items _$ItemsFromJson(Map<String, dynamic> json) {
   return Items(
     giftCategory: json['GiftCategory'],
@@ -30,6 +31,7 @@ Items _$ItemsFromJson(Map<String, dynamic> json) {
   );
 }
 
+/// Classe helper de serialização JSON
 Map<String, dynamic> _$ItemsToJson(Items instance) {
   final val = <String, dynamic>{};
 

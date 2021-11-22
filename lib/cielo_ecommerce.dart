@@ -1,3 +1,5 @@
+/// Exportação do pacote
+
 library cielo_ecommerce;
 
 export 'src/cieloecommerce.dart';

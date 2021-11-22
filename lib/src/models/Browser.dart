@@ -1,5 +1,6 @@
 part 'Browser.g.dart';
 
+/// Classe Browser da documentação oficial Cielo Ecommerce
 class Browser {
   String? hostName;
   bool? cookiesAccepted;

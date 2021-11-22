@@ -1,3 +1,4 @@
+/// Classe Cielo Error da documentação oficial Cielo Ecommerce
 class CieloError {
   int? code;
   String? message;

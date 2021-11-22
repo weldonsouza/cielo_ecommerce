@@ -2,6 +2,7 @@ import 'models.dart';
 
 part 'Travel.g.dart';
 
+/// Classe Travel da documentação oficial Cielo Ecommerce
 class Travel {
   String? route;
   String? departureTime;

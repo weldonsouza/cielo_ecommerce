@@ -6,6 +6,7 @@ part of 'Shipping.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
+/// Classe helper de serialização JSON
 Shipping _$ShippingFromJson(Map<String, dynamic> json) {
   return Shipping(
     addressee: json['Addressee'] as String?,
@@ -14,6 +15,7 @@ Shipping _$ShippingFromJson(Map<String, dynamic> json) {
   );
 }
 
+/// Classe helper de serialização JSON
 Map<String, dynamic> _$ShippingToJson(Shipping instance) {
   final val = <String, dynamic>{};
 

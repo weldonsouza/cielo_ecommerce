@@ -2,6 +2,7 @@ import 'models.dart';
 
 part 'Sale.g.dart';
 
+/// Classe Sale da documentação oficial Cielo Ecommerce
 class Sale {
   String? merchantOrderId;
   Customer? customer;

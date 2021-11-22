@@ -6,6 +6,7 @@ part of 'CreditCard.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
+/// Classe helper de serialização JSON
 CreditCard _$CreditCardFromJson(Map<String, dynamic> json) {
   return CreditCard(
     cardNumber: json['CardNumber'] as String?,
@@ -19,6 +20,7 @@ CreditCard _$CreditCardFromJson(Map<String, dynamic> json) {
   );
 }
 
+/// Classe helper de serialização JSON
 Map<String, dynamic> _$CreditCardToJson(CreditCard instance) {
   final val = <String, dynamic>{};
 

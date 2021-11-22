@@ -2,6 +2,7 @@ import 'models.dart';
 
 part 'FraudAnalysis.g.dart';
 
+/// Classe Fraud Analysis da documentação oficial Cielo Ecommerce
 class FraudAnalysis {
   String? id;
   int? status;

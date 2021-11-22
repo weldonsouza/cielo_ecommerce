@@ -1,5 +1,6 @@
 part 'BillingAddress.g.dart';
 
+/// Classe BillingAddress da documentação oficial Cielo Ecommerce
 class BillingAddress {
   String? street;
   String? number;

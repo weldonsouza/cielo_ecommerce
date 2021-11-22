@@ -6,6 +6,7 @@ part of 'Link.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
+/// Classe helper de serialização JSON
 Link _$LinkFromJson(Map<String, dynamic> json) {
   return Link(
     method: json['Method'] as String?,
@@ -14,6 +15,7 @@ Link _$LinkFromJson(Map<String, dynamic> json) {
   );
 }
 
+/// Classe helper de serialização JSON
 Map<String, dynamic> _$LinkToJson(Link instance) {
   final val = <String, dynamic>{};
 

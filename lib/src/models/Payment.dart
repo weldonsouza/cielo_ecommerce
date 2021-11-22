@@ -2,7 +2,7 @@ import 'models.dart';
 
 part 'Payment.g.dart';
 
-//Payment
+/// Classe Payment da documentação oficial Cielo Ecommerce
 class Payment {
   int? serviceTaxAmount;
   int? installments;

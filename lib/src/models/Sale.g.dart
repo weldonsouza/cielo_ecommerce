@@ -6,6 +6,7 @@ part of 'Sale.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
+/// Classe helper de serialização JSON
 Sale _$SaleFromJson(Map<String, dynamic> json) {
   return Sale(
     merchantOrderId: json['MerchantOrderId'] as String?,
@@ -18,6 +19,7 @@ Sale _$SaleFromJson(Map<String, dynamic> json) {
   );
 }
 
+/// Classe helper de serialização JSON
 Map<String, dynamic> _$SaleToJson(Sale instance) {
   final val = <String, dynamic>{};
 

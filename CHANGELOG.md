@@ -1,3 +1,7 @@
+## [2.1.1] - 22 de Novembro de 2021.
+
+* Ajuste de formatação e documentação de API
+
 ## [2.1.0] - 20 de Novembro de 2021.
 
 * Adicionando Transação com Google Pay

@@ -6,6 +6,7 @@ part of 'Legs.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
+/// Classe helper de serialização JSON
 Legs _$LegsFromJson(Map<String, dynamic> json) {
   return Legs(
     destination: json['Destination'] as String?,
@@ -13,6 +14,7 @@ Legs _$LegsFromJson(Map<String, dynamic> json) {
   );
 }
 
+/// Classe helper de serialização JSON
 Map<String, dynamic> _$LegsToJson(Legs instance) {
   final val = <String, dynamic>{};
 

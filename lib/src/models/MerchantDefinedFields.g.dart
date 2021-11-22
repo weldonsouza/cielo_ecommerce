@@ -6,6 +6,7 @@ part of 'MerchantDefinedFields.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
+/// Classe helper de serialização JSON
 MerchantDefinedFields _$MerchantDefinedFieldsFromJson(
     Map<String, dynamic> json) {
   return MerchantDefinedFields(
@@ -14,6 +15,7 @@ MerchantDefinedFields _$MerchantDefinedFieldsFromJson(
   );
 }
 
+/// Classe helper de serialização JSON
 Map<String, dynamic> _$MerchantDefinedFieldsToJson(
     MerchantDefinedFields instance) {
   final val = <String, dynamic>{};

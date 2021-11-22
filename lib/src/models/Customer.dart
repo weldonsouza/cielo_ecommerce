@@ -2,6 +2,7 @@ import 'models.dart';
 
 part 'Customer.g.dart';
 
+/// Classe Customer da documentação oficial Cielo Ecommerce
 class Customer {
   String? name;
   String? identity;

@@ -2,6 +2,7 @@ import 'models.dart';
 
 part 'Cart.g.dart';
 
+/// Classe Cart da documentação oficial Cielo Ecommerce
 class Cart {
   bool? isGift;
   bool? returnsAccepted;

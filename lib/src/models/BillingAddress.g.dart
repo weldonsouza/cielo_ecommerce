@@ -6,6 +6,7 @@ part of 'BillingAddress.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
+/// Classe helper de serialização JSON
 BillingAddress _$BillingAddressFromJson(Map<String, dynamic> json) {
   return BillingAddress(
     street: json['Street'] as String?,
@@ -19,6 +20,7 @@ BillingAddress _$BillingAddressFromJson(Map<String, dynamic> json) {
   );
 }
 
+/// Classe helper de serialização JSON
 Map<String, dynamic> _$BillingAddressToJson(BillingAddress instance) {
   final val = <String, dynamic>{};
 

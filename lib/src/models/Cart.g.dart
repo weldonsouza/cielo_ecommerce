@@ -6,6 +6,7 @@ part of 'Cart.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
+/// Classe helper de serialização JSON
 Cart _$CartFromJson(Map<String, dynamic> json) {
   return Cart(
     isGift: json['IsGift'] as bool?,
@@ -16,6 +17,7 @@ Cart _$CartFromJson(Map<String, dynamic> json) {
   );
 }
 
+/// Classe helper de serialização JSON
 Map<String, dynamic> _$CartToJson(Cart instance) {
   final val = <String, dynamic>{};
 

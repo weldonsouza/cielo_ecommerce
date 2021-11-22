@@ -1,5 +1,6 @@
 part 'Shipping.g.dart';
 
+/// Classe Shipping da documentação oficial Cielo Ecommerce
 class Shipping {
   String? addressee;
   String? phone;

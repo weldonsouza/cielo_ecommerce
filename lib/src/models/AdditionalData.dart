@@ -1,5 +1,6 @@
 part 'AdditionalData.g.dart';
 
+/// Classe Additional Data da documentação oficial Cielo Ecommerce
 class AdditionalData {
   String? signature;
 

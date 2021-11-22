@@ -6,6 +6,7 @@ part of 'ReplyData.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
+/// Classe helper de serialização JSON
 ReplyData _$ReplyDataFromJson(Map<String, dynamic> json) {
   return ReplyData(
     addressInfoCode: json['AddressInfoCode'] as String?,

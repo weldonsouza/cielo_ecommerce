@@ -2,6 +2,7 @@ import 'models.dart';
 
 part 'ReturnExecutionStatus.g.dart';
 
+/// Classe Return Execution Status da documentação oficial Cielo Ecommerce
 class ReturnExecutionStatus {
   int? status;
   int? reasonCode;

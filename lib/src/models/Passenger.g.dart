@@ -6,6 +6,7 @@ part of 'Passenger.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
+/// Classe helper de serialização JSON
 Passenger _$PassengerFromJson(Map<String, dynamic> json) {
   return Passenger(
     name: json['Name'] as String?,
@@ -18,6 +19,7 @@ Passenger _$PassengerFromJson(Map<String, dynamic> json) {
   );
 }
 
+/// Classe helper de serialização JSON
 Map<String, dynamic> _$PassengerToJson(Passenger instance) {
   final val = <String, dynamic>{};
 

@@ -2,6 +2,7 @@ import 'models.dart';
 
 part 'Items.g.dart';
 
+/// Classe Items da documentação oficial Cielo Ecommerce
 class Items {
   dynamic giftCategory;
   dynamic hostHedge;

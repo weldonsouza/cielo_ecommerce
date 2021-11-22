@@ -1,5 +1,6 @@
 part 'CreditCard.g.dart';
 
+/// Classe Credit Card da documentação oficial Cielo Ecommerce
 class CreditCard {
   String? cardNumber;
   String? holder;

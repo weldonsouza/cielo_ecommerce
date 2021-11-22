@@ -6,6 +6,7 @@ part of 'Travel.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
+/// Classe helper de serialização JSON
 Travel _$TravelFromJson(Map<String, dynamic> json) {
   return Travel(
     route: json['Route'] as String?,
@@ -17,6 +18,7 @@ Travel _$TravelFromJson(Map<String, dynamic> json) {
   );
 }
 
+/// Classe helper de serialização JSON
 Map<String, dynamic> _$TravelToJson(Travel instance) {
   final val = <String, dynamic>{};
 

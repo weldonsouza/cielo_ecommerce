@@ -3,6 +3,7 @@ import 'package:dio/dio.dart';
 import '../cielo_ecommerce.dart';
 import 'models/models.dart';
 
+/// Corpo do pacote
 class CieloEcommerce {
   final Environment? environment;
   final Merchant? merchant;
@@ -46,7 +47,7 @@ class CieloEcommerce {
     return null;
   }
 
-  ///Função para aprovar a compra
+  /// Função para aprovar a compra
   Future<ReturnExecutionStatus?> enableCapture(captureSale) async {
     try {
       Response response =

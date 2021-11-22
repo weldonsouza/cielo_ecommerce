@@ -12,7 +12,8 @@ Wallet _$WalletFromJson(Map<String, dynamic> json) {
     walletKey: json['WalletKey'] as String?,
     additionalData: json['AdditionalData'] == null
         ? null
-        : AdditionalData.fromJson(json['AdditionalData'] as Map<String, dynamic>),
+        : AdditionalData.fromJson(
+            json['AdditionalData'] as Map<String, dynamic>),
   );
 }
 

@@ -1,5 +1,6 @@
 part 'ReplyData.g.dart';
 
+/// Classe Reply Data da documentação oficial Cielo Ecommerce
 class ReplyData {
   String? addressInfoCode;
   String? factorCode;

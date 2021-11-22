@@ -1,4 +1,3 @@
-
 import 'package:cielo_ecommerce/cielo_ecommerce.dart';
 import 'package:flutter/material.dart';
 
@@ -24,6 +23,7 @@ class MyHomePage extends StatefulWidget {
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
+
 var paymentId;
 int? status = 0;
 var enableAction;
@@ -38,7 +38,6 @@ class _MyHomePageState extends State<MyHomePage> {
       ));
 
   _makePayment() async {
-
     print("Transação Simples");
     print("Iniciando pagamento....");
     //Objeto de venda
@@ -51,12 +50,14 @@ class _MyHomePageState extends State<MyHomePage> {
         type: TypePayment.creditCard, // Tipo do Meio de Pagamento
         amount: 9, // Valor do Pedido (ser enviado em centavos)
         installments: 1, // Número de Parcelas
-        softDescriptor: "Mensagem", // Descrição que aparecerá no extrato do usuário. Apenas 15 caracteres
+        softDescriptor:
+            "Mensagem", // Descrição que aparecerá no extrato do usuário. Apenas 15 caracteres
         creditCard: CreditCard(
           cardNumber: "4024007153763191", // Número do Cartão do Comprador
           holder: 'Teste accept', // Nome do Comprador impresso no cartão
           expirationDate: '08/2030', // Data de validade impresso no cartão
-          securityCode: '123', // Código de segurança impresso no verso do cartão
+          securityCode:
+              '123', // Código de segurança impresso no verso do cartão
           brand: 'Visa', // Bandeira do cartão
         ),
       ),
@@ -84,7 +85,6 @@ class _MyHomePageState extends State<MyHomePage> {
       }*/
 
       setState(() {});
-
     } on CieloException catch (e) {
       print(e);
       print(e.message);
@@ -292,13 +292,13 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    if(status == 0){
+    if (status == 0) {
       returnMessage = 'Aguardando atualização de status';
-    } else if(status == 1){
+    } else if (status == 1) {
       returnMessage = 'Pagamento apto a ser capturado ou definido como pago';
-    } else if(status == 2){
+    } else if (status == 2) {
       returnMessage = 'Pagamento confirmado e finalizado';
-    } else if(status == 10){
+    } else if (status == 10) {
       returnMessage = 'Pagamento cancelado';
     }
 
@@ -325,7 +325,6 @@ class _MyHomePageState extends State<MyHomePage> {
                 onPressed: () async {
                   print('Consultar');
                   try {
-
                     // Retorna Sale com dados da consulta
                     enableAction = await cielo.getReturn(paymentId);
 
@@ -333,10 +332,10 @@ class _MyHomePageState extends State<MyHomePage> {
                     print(enableAction.toJson());
 
                     // Atualização do status da compra
-                    status = enableAction.toJson()['Payment'].toJson()['Status'];
+                    status =
+                        enableAction.toJson()['Payment'].toJson()['Status'];
 
                     setState(() {});
-
                   } on CieloException catch (e) {
                     print(e);
                     print(e.message);
@@ -345,26 +344,24 @@ class _MyHomePageState extends State<MyHomePage> {
                   }
                 }),
             ElevatedButton(
-              child: Text('Aprovar', style: TextStyle(color: Colors.white)),
-              style: ElevatedButton.styleFrom(
-                primary: Colors.green,
-              ),
-              onPressed: () async {
-                print('Aprovar');
-                try {
+                child: Text('Aprovar', style: TextStyle(color: Colors.white)),
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.green,
+                ),
+                onPressed: () async {
+                  print('Aprovar');
+                  try {
+                    enableAction = await cielo.enableCapture(paymentId);
+                    status = enableAction.status;
 
-                  enableAction = await cielo.enableCapture(paymentId);
-                  status = enableAction.status;
-
-                  setState(() {});
-
-                } on CieloException catch (e) {
-                  print(e);
-                  print(e.message);
-                  print(e.errors[0].message);
-                  print(e.errors[0].code);
-                }
-            }),
+                    setState(() {});
+                  } on CieloException catch (e) {
+                    print(e);
+                    print(e.message);
+                    print(e.errors[0].message);
+                    print(e.errors[0].code);
+                  }
+                }),
             ElevatedButton(
                 child: Text('Cancelar', style: TextStyle(color: Colors.white)),
                 style: ElevatedButton.styleFrom(
@@ -373,11 +370,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 onPressed: () async {
                   print('Cancelar');
                   try {
-
                     enableAction = await cielo.enableVoid(paymentId);
                     status = enableAction.status;
                     setState(() {});
-
                   } on CieloException catch (e) {
                     print(e);
                     print(e.message);

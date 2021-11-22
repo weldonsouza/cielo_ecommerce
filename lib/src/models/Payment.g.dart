@@ -6,6 +6,7 @@ part of 'Payment.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
+/// Classe helper de serialização JSON
 Payment _$PaymentFromJson(Map<String, dynamic> json) {
   return Payment(
     serviceTaxAmount: json['ServiceTaxAmount'] as int?,
@@ -60,6 +61,7 @@ Payment _$PaymentFromJson(Map<String, dynamic> json) {
   );
 }
 
+/// Classe helper de serialização JSON
 Map<String, dynamic> _$PaymentToJson(Payment instance) {
   final val = <String, dynamic>{};
 

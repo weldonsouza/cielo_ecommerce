@@ -6,6 +6,7 @@ part of 'FraudAnalysis.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
+/// Classe helper de serialização JSON
 FraudAnalysis _$FraudAnalysisFromJson(Map<String, dynamic> json) {
   return FraudAnalysis(
     id: json['Id'] as String?,
@@ -42,6 +43,7 @@ FraudAnalysis _$FraudAnalysisFromJson(Map<String, dynamic> json) {
   );
 }
 
+/// Classe helper de serialização JSON
 Map<String, dynamic> _$FraudAnalysisToJson(FraudAnalysis instance) {
   final val = <String, dynamic>{};
 

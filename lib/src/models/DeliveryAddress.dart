@@ -1,5 +1,6 @@
 part 'DeliveryAddress.g.dart';
 
+/// Classe Delivery Address da documentação oficial Cielo Ecommerce
 class DeliveryAddress {
   String? street;
   String? number;

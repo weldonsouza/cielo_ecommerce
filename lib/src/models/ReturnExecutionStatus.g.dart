@@ -6,6 +6,7 @@ part of 'ReturnExecutionStatus.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
+/// Classe helper de serialização JSON
 ReturnExecutionStatus _$ReturnExecutionStatusFromJson(
     Map<String, dynamic> json) {
   return ReturnExecutionStatus(
@@ -25,6 +26,7 @@ ReturnExecutionStatus _$ReturnExecutionStatusFromJson(
   );
 }
 
+/// Classe helper de serialização JSON
 Map<String, dynamic> _$ReturnExecutionStatusToJson(
     ReturnExecutionStatus instance) {
   final val = <String, dynamic>{};

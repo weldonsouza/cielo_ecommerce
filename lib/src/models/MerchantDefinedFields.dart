@@ -1,5 +1,6 @@
 part 'MerchantDefinedFields.g.dart';
 
+/// Classe Merchant Defined Fields da documentação oficial Cielo Ecommerce
 class MerchantDefinedFields {
   dynamic id;
   String? value;

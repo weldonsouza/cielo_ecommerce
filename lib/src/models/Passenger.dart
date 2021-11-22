@@ -1,5 +1,6 @@
 part 'Passenger.g.dart';
 
+/// Classe Passenger da documentação oficial Cielo Ecommerce
 class Passenger {
   String? name;
   String? identity;
