@@ -18,7 +18,7 @@ Este plug-in permite:
 
 ```YAML
 dependencies:
-    cielo_ecommerce: ^2.1.1
+    cielo_ecommerce: ^2.2.0
 ```
 
 2. Importar o pacote

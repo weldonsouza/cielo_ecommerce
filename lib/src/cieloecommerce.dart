@@ -1,7 +1,6 @@
 import 'package:dio/dio.dart';
 
 import '../cielo_ecommerce.dart';
-import 'models/models.dart';
 
 /// Corpo do pacote
 class CieloEcommerce {

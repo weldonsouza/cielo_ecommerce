@@ -1,3 +1,7 @@
+## [2.2.0] - 22 de Novembro de 2021.
+
+* Atualização do package e aplicativo exemplo
+
 ## [2.1.1] - 22 de Novembro de 2021.
 
 * Ajuste de formatação e documentação de API

@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'Flutter Demo Cielo Ecommerce'),
     );
   }
 }
@@ -31,11 +31,12 @@ var returnMessage;
 
 class _MyHomePageState extends State<MyHomePage> {
   final CieloEcommerce cielo = CieloEcommerce(
-      environment: Environment.sandbox,
-      merchant: Merchant(
-        merchantId: "SEU_MERCHANT_ID",
-        merchantKey: "SEU_MERCHANT_KEY",
-      ));
+    environment: Environment.sandbox,
+    merchant: Merchant(
+      merchantId: "SEU_MERCHANT_ID",
+      merchantKey: "SEU_MERCHANT_KEY",
+    ),
+  );
 
   _makePayment() async {
     print("Transação Simples");
@@ -51,13 +52,13 @@ class _MyHomePageState extends State<MyHomePage> {
         amount: 9, // Valor do Pedido (ser enviado em centavos)
         installments: 1, // Número de Parcelas
         softDescriptor:
-            "Mensagem", // Descrição que aparecerá no extrato do usuário. Apenas 15 caracteres
+        "Mensagem", // Descrição que aparecerá no extrato do usuário. Apenas 15 caracteres
         creditCard: CreditCard(
           cardNumber: "4024007153763191", // Número do Cartão do Comprador
           holder: 'Teste accept', // Nome do Comprador impresso no cartão
           expirationDate: '08/2030', // Data de validade impresso no cartão
           securityCode:
-              '123', // Código de segurança impresso no verso do cartão
+          '123', // Código de segurança impresso no verso do cartão
           brand: 'Visa', // Bandeira do cartão
         ),
       ),
@@ -333,7 +334,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
                     // Atualização do status da compra
                     status =
-                        enableAction.toJson()['Payment'].toJson()['Status'];
+                    enableAction.toJson()['Payment'].toJson()['Status'];
 
                     setState(() {});
                   } on CieloException catch (e) {
